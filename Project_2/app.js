@@ -5,22 +5,15 @@ console.log(imageContainer);
 /******************** */
 //Full image selector
 const fullImage = document.querySelector('.full-img');
-console.log(fullImage.alt);
+console.log(fullImage);
 //Gallery section that has all the small images
-const gallerySection = document.querySelector('.gallery');
-console.log(gallerySection);
+const smImgGallery = document.querySelector('.gallery');
+console.log(smImgGallery);
 //Modal to show large images
 const galleryModal = document.querySelector('.modal');
 console.log(galleryModal);
-const smallImage = document.querySelector('.small-img');
 
-// for (const img of imageContainer) {
-//   img.addEventListener('click', (e) => {
-//     console.log(img.src);
-//   });
-// }
-
-gallerySection.addEventListener('click', () => {
+smImgGallery.addEventListener('click', () => {
   console.log(imageContainer);
   //   for (const img of gallerySection) {
   //   }
