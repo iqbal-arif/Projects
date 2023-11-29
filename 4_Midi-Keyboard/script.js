@@ -13,6 +13,9 @@ const NOTE_DETAILS = [
   { note: 'B', key: 'M', frequency: 493.883 },
 ];
 
+const keyDisplay = document.querySelectorAll('[data-note]');
+console.log(keyDisplay);
+
 document.addEventListener('keydown', (e) => {
   if (e.repeat) return; //to exit out of function. it's a guard clause.
   console.log('Down Event ', e);
@@ -24,7 +27,7 @@ document.addEventListener('keydown', (e) => {
   //To playNotes()
   playNotes();
 
-  console.log(keyboardNote);
+  console.log(keNoteDetail);
 });
 document.addEventListener('keyup', (e) => {
   console.log('Up Event ', e);
