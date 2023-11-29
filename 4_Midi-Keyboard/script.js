@@ -19,8 +19,10 @@ document.addEventListener('keydown', (e) => {
   const keCode = e.code;
   const keNoteDetail = getNoteDetail(keCode);
   if (keNoteDetail == null) return;
-  //Adding Active property to NOTE-DETAILS
+  //Adding Active property to NOTE-DETAILS to Play the active notes
   keNoteDetail.active = true;
+  //Builtin playNotes()
+  playNotes();
 
   console.log(keyboardNote);
 });
@@ -30,4 +32,8 @@ document.addEventListener('keyup', (e) => {
 
 function getNoteDetail(keyBoardCode) {
   return NOTE_DETAILS.find((keyNode) => `Key${keyNode.key}` === keyBoardCode);
+}
+
+function playNotes() {
+  console.log('play Notes');
 }
