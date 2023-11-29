@@ -5,8 +5,8 @@
 }
 
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 header {
@@ -20,6 +20,7 @@ header {
 nav {
   margin: auto;
   width: 90%;
+  /* To center the Text height and width value are same */
   min-height: 9vh;
   line-height: 9vh;
 }
