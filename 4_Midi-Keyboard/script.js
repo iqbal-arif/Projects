@@ -12,3 +12,18 @@ const NOTE_DETAILS = [
   { note: 'Bb', key: 'J', frequency: 466.164 },
   { note: 'B', key: 'M', frequency: 493.883 },
 ];
+
+document.addEventListener('keydown', (e) => {
+  if (e.repeat) return; //to exit out of function. it's a guard clause.
+  console.log('Down Event ', e);
+  const keCode = e.code;
+  const keyboardNote = getNoteDetail(keCode);
+  console.log(keyboardNote);
+});
+document.addEventListener('keyup', (e) => {
+  console.log('Up Event ', e);
+});
+
+function getNoteDetail(keyBoardCode) {
+  return NOTE_DETAILS.find((keyNode) => `Key${keyNode}` === keyBoardCode);
+}
