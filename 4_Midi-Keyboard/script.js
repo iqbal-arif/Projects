@@ -13,7 +13,7 @@ const NOTE_DETAILS = [
   { note: 'B', key: 'M', frequency: 493.883, active: false },
 ];
 
-const keyDisplay = document.querySelectorAll('[data-note]');
+const keyDisplay = document.querySelector('[data-note]');
 // console.log(keyDisplay);
 
 document.addEventListener('keydown', (e) => {
@@ -44,7 +44,7 @@ function getNoteDetail(keyBoardCode) {
 
 function playNotes() {
   NOTE_DETAILS.forEach((keyNode) => {
-    keyDisplay.classList.toggle('active', `${keyDisplay.keyNode.note}`);
+    keyDisplay.classList.toggle('active', `keyNode.${keyDisplay.note}`);
     console.log(keyDisplay);
   });
 }
