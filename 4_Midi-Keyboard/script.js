@@ -17,7 +17,11 @@ document.addEventListener('keydown', (e) => {
   if (e.repeat) return; //to exit out of function. it's a guard clause.
   console.log('Down Event ', e);
   const keCode = e.code;
-  const keyboardNote = getNoteDetail(keCode);
+  const keNoteDetail = getNoteDetail(keCode);
+  if (keNoteDetail == null) return;
+  //Adding Active property to NOTE-DETAILS
+  keNoteDetail.active = true;
+
   console.log(keyboardNote);
 });
 document.addEventListener('keyup', (e) => {
@@ -25,5 +29,5 @@ document.addEventListener('keyup', (e) => {
 });
 
 function getNoteDetail(keyBoardCode) {
-  return NOTE_DETAILS.find((keyNode) => `Key${keyNode}` === keyBoardCode);
+  return NOTE_DETAILS.find((keyNode) => `Key${keyNode.key}` === keyBoardCode);
 }
