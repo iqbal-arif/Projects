@@ -21,13 +21,18 @@ document.addEventListener('keydown', (e) => {
   if (keNoteDetail == null) return;
   //Adding Active property to NOTE-DETAILS to Play the active notes
   keNoteDetail.active = true;
-  //Builtin playNotes()
+  //To playNotes()
   playNotes();
 
   console.log(keyboardNote);
 });
 document.addEventListener('keyup', (e) => {
   console.log('Up Event ', e);
+  const keCode = e.code;
+  const keNoteDetail = getNoteDetail(keCode);
+  if (keNoteDetail == null) return;
+  keNoteDetail.active = false;
+  playNotes();
 });
 
 function getNoteDetail(keyBoardCode) {
