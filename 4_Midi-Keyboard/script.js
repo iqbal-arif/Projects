@@ -14,7 +14,7 @@ const NOTE_DETAILS = [
 ];
 
 const keyDisplay = document.querySelectorAll('[data-note]');
-console.log(keyDisplay);
+// console.log(keyDisplay);
 
 document.addEventListener('keydown', (e) => {
   if (e.repeat) return; //to exit out of function. it's a guard clause.
@@ -43,8 +43,10 @@ function getNoteDetail(keyBoardCode) {
 }
 
 function playNotes() {
-  const keyElement = NOTE_DETAILS.forEach((keyDisplay) =>
-    console.log(keyDisplay)
-  );
-  console.log(keyElement);
+  NOTE_DETAILS.forEach((keyNode) => {
+    keyDisplay.classList.toggle('active', `${keyDisplay.keyNode.note}`);
+    console.log(keyDisplay);
+  });
 }
+//   keyElement.classList.toggle('active', keyDisplay.active);
+// console.log(keyElement);
