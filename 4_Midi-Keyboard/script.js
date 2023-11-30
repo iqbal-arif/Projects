@@ -71,8 +71,10 @@ function startNode(keNoteDetail, gain) {
   const gainNOde = audioContext.createGain();
   gainNOde.gain.value = gain;
   const oscillator = audioContext.createOscillator();
-  oscillator.frequency = keNoteDetail.frequency;
+  // .value sets different node sounds
+  oscillator.frequency.value = keNoteDetail.frequency;
   oscillator.type = 'sine';
+  // connect(gainNode) sets the l
   oscillator.connect(gainNOde).connect(audioContext.destination);
   oscillator.start();
   // saving reference to note to check for oscillator connection to stop it
