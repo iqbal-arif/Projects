@@ -46,18 +46,28 @@ function playNotes() {
     const keyDisplay = document.querySelector(`[data-note=${keyNode.note}]`);
     keyDisplay.classList.toggle('active', keyNode.active);
     console.log(keyDisplay);
+    if (keyNode.oscillator != null) {
+      keyNode.oscillator.stop();
+      keyNode.oscillator.disconnect();
+    }
   });
   // Getting Notes that are active
 
   const activeNodes = NOTE_DETAILS.filter((keyNode) => keyNode.active);
   activeNodes.forEach((keyNode) => {
-    playNode(keyNode);
+    startNode(keyNode);
   });
 }
+cc;
 
 // Function to play Audio Frequencies
 
-function playNode(nodeFrequency) {
+function startNode(nodeFrequency) {
   const oscillator = audioContext.createOscillator;
-  oscillator.frequency = NOTE_DETAILS;
+  oscillator.frequency = keNoteDetail.frequency;
+  oscillator.type = 'sine';
+  oscillator.connect(audioContext.destination);
+  oscillator.start();
+  //
+  keNoteDetail.oscillator = oscillator;
 }
