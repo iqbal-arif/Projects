@@ -13,9 +13,6 @@ const NOTE_DETAILS = [
   { note: 'B', key: 'M', frequency: 493.883, active: false },
 ];
 
-//
-// console.log(keyDisplay);
-
 document.addEventListener('keydown', (e) => {
   if (e.repeat) return; //to exit out of function. it's a guard clause.
   console.log('Down Event ', e);
@@ -41,13 +38,17 @@ document.addEventListener('keyup', (e) => {
 function getNoteDetail(keyBoardCode) {
   return NOTE_DETAILS.find((keyNode) => `Key${keyNode.key}` === keyBoardCode);
 }
-
+//Adding Class Nodes
 function playNotes() {
   NOTE_DETAILS.forEach((keyNode) => {
-    const keyDisplay = document.querySelector('[data-note]');
-    keyDisplay.classList.toggle('active', `${keyNode.keyDisplay.note}`);
+    const keyDisplay = document.querySelector(`[data-note=${keyNode.note}]`);
+    keyDisplay.classList.toggle('active', keyNode.active);
     console.log(keyDisplay);
   });
+  // Getting Notes that are active
+
+  const activeNodes = NOTE_DETAILS.filter((keyNode) => keyNode.active);
+  activeNodes.forEach((keyNode) => {
+    playNode(keyNode);
+  });
 }
-//   keyElement.classList.toggle('active', keyDisplay.active);
-// console.log(keyElement);
