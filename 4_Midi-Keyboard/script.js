@@ -40,34 +40,36 @@ document.addEventListener('keyup', (e) => {
 function getNoteDetail(keyBoardCode) {
   return NOTE_DETAILS.find((keyNode) => `Key${keyNode.key}` === keyBoardCode);
 }
+
 //Adding Class Nodes
 function playNotes() {
+  //Applying active notes to predefined keys
   NOTE_DETAILS.forEach((keyNode) => {
     const keyDisplay = document.querySelector(`[data-note=${keyNode.note}]`);
     keyDisplay.classList.toggle('active', keyNode.active);
     console.log(keyDisplay);
+    // Node player stop condition if oscillator is connected to note
     if (keyNode.oscillator != null) {
       keyNode.oscillator.stop();
       keyNode.oscillator.disconnect();
     }
   });
-  // Getting Notes that are active
 
+  // Getting Notes that are active
   const activeNodes = NOTE_DETAILS.filter((keyNode) => keyNode.active);
   activeNodes.forEach((keyNode) => {
     startNode(keyNode);
   });
 }
-cc;
 
 // Function to play Audio Frequencies
 
-function startNode(nodeFrequency) {
-  const oscillator = audioContext.createOscillator;
+function startNode(keNoteDetail) {
+  const oscillator = audioContext.createOscillator();
   oscillator.frequency = keNoteDetail.frequency;
   oscillator.type = 'sine';
   oscillator.connect(audioContext.destination);
   oscillator.start();
-  //
+  // saving reference to note to check for oscillator connection to stop it
   keNoteDetail.oscillator = oscillator;
 }
