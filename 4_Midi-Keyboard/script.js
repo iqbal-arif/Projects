@@ -1,3 +1,5 @@
+const audioContext = new AudioContext();
+
 const NOTE_DETAILS = [
   { note: 'C', key: 'Z', frequency: 261.626, active: false },
   { note: 'Db', key: 'S', frequency: 277.183, active: false },
@@ -51,4 +53,11 @@ function playNotes() {
   activeNodes.forEach((keyNode) => {
     playNode(keyNode);
   });
+}
+
+// Function to play Audio Frequencies
+
+function playNode(nodeFrequency) {
+  const oscillator = audioContext.createOscillator;
+  oscillator.frequency = NOTE_DETAILS;
 }
