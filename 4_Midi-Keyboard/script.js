@@ -57,18 +57,23 @@ function playNotes() {
 
   // Getting Notes that are active
   const activeNodes = NOTE_DETAILS.filter((keyNode) => keyNode.active);
+  // To divide the tone intensity and keep it a 100% even if more then one note is playing simultaneously
+  const gain = 1 / activeNodes.length;
   activeNodes.forEach((keyNode) => {
-    startNode(keyNode);
+    startNode(keyNode, gain);
   });
 }
 
 // Function to play Audio Frequencies
 
-function startNode(keNoteDetail) {
+function startNode(keNoteDetail, gain) {
+  // gain is used to determine the volume of out put
+  const gainNOde = audioContext.createGain();
+  gainNOde.gain.value = gain;
   const oscillator = audioContext.createOscillator();
   oscillator.frequency = keNoteDetail.frequency;
   oscillator.type = 'sine';
-  oscillator.connect(audioContext.destination);
+  oscillator.connect(gainNOde).connect(audioContext.destination);
   oscillator.start();
   // saving reference to note to check for oscillator connection to stop it
   keNoteDetail.oscillator = oscillator;
