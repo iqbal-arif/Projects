@@ -16,7 +16,26 @@
 //    7. BONUS: If all answers are correct show the element with the id `alert` and hide it after one second (look into setTimeout) (use the class active to show the alert and remove the class to hide it)
 
 const quizForm = document.querySelector('#quiz-form');
-const answerInput = document.querySelector('.answer');
+const answerInput = document.querySelectorAll('.answer');
+// const answerInput = document.querySelectorAll('.answer:checked');
+console.log(answerInput);
+const submit = document.querySelector('button');
+
 //Bonus
-const questionItem = document.querySelector('.question-item');
+const questionItem = document.querySelectorAll('.question-item');
 const alertModal = document.querySelector('#alert');
+
+console.log(alertModal);
+
+// console.log(ansSelection);
+
+answerInput.forEach((ans) => {
+  if()
+  console.log(ans);
+});
+
+submit.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  console.log('e.preventDefault');
+});
