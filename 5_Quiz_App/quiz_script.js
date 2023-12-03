@@ -38,6 +38,10 @@ console.log(alertModal);
 quizForm.addEventListener('click', () => {
   answerInput.forEach((ans) => {
     if (ans.checked) {
+      if (ans.value) {
+        questionItem.classList.add('correct');
+        questionItem.classList.remove('incorrect');
+      }
       console.log(ans.value);
     }
     // ans.forEach((item) => console.log(item.value));
