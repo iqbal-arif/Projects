@@ -36,19 +36,26 @@ console.log(alertModal);
 // });
 
 quizForm.addEventListener('click', () => {
-  answerInput.forEach((ans) => {
-    if (ans.checked) {
-      if (ans.value) {
-        console.log(questionItem);
-        questionItem.forEach((que) => {
-          que.classList.add('correct');
-        });
-        //   questionItem.classList.remove('.incorrect');
-      }
-      console.log(ans.value);
+  for (i = 1; 1 < 4; i++) {
+    if (answerInput.checked) {
+      console.log(answerInput);
     }
-    // ans.forEach((item) => console.log(item.value));
-  });
+  }
+
+  // answerInput.forEach((ans) => {
+  //   if (ans.checked) {
+  //     if (ans.value) {
+  //       console.log(questionItem);
+  //       questionItem.forEach((que) => {
+  //         que.classList.add('correct');
+  //         console.log(que);
+  //       });
+  //       //   questionItem.classList.remove('.incorrect');
+  //     }
+  //     // console.log(ans.value);
+  //   }
+  //   // ans.forEach((item) => console.log(item.value));
+  // });
 });
 
 submit.addEventListener('click', (e) => {
