@@ -29,9 +29,19 @@ console.log(alertModal);
 
 // console.log(ansSelection);
 
-answerInput.forEach((ans) => {
-  if()
-  console.log(ans);
+// quizForm.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   answerInput.forEach((ans) => console.log(ans.value));
+//   // console.log(answerInput.checked);
+// });
+
+quizForm.addEventListener('click', () => {
+  answerInput.forEach((ans) => {
+    if (ans.checked) {
+      console.log(ans.value);
+    }
+    // ans.forEach((item) => console.log(item.value));
+  });
 });
 
 submit.addEventListener('click', (e) => {
