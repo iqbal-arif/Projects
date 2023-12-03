@@ -39,8 +39,11 @@ quizForm.addEventListener('click', () => {
   answerInput.forEach((ans) => {
     if (ans.checked) {
       if (ans.value) {
-        questionItem.classList.add('correct');
-        questionItem.classList.remove('incorrect');
+        console.log(questionItem);
+        questionItem.forEach((que) => {
+          que.classList.add('correct');
+        });
+        //   questionItem.classList.remove('.incorrect');
       }
       console.log(ans.value);
     }
