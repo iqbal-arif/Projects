@@ -36,8 +36,8 @@ console.log(alertModal);
 // });
 
 quizForm.addEventListener('click', () => {
-  for (i = 1; 1 < 4; i++) {
-    if (answerInput.checked) {
+  if (answerInput.checked) {
+    for (i = 1; 1 < 4; i++) {
       console.log(answerInput);
     }
   }
