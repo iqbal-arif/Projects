@@ -39,11 +39,11 @@ quizForm.addEventListener('click', () => {
   // console.log(answerInput);
   for (const answer of answerInput) {
     console.log(answer.name);
-    if (answerInput.checked) {
-      for (i = 1; 1 < 4; i++) {
-        console.log(questionItem);
-      }
+
+    for (i = 1; 1 < 4; i++) {
+      console.log(`answer.name-${i}`);
     }
+
     // if (answer.value === true) {
     //   break;
     // }
