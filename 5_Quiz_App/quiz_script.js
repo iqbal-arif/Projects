@@ -36,11 +36,22 @@ console.log(alertModal);
 // });
 
 quizForm.addEventListener('click', () => {
-  if (answerInput.checked) {
-    for (i = 1; 1 < 4; i++) {
-      console.log(answerInput);
+  // console.log(answerInput);
+  for (const answer of answerInput) {
+    console.log(answer.name);
+    if (answerInput.checked) {
+      for (i = 1; 1 < 4; i++) {
+        console.log(questionItem);
+      }
     }
+    // if (answer.value === true) {
+    //   break;
+    // }
   }
+  // if (answerInput.checked) {
+  //   console.log(answerInput.value);
+  // }
+  //
 
   // answerInput.forEach((ans) => {
   //   if (ans.checked) {
