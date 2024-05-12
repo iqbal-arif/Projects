@@ -40,7 +40,7 @@ quizForm.addEventListener('click', () => {
   for (const answer of answerInput) {
     console.log(answer.name);
 
-    for (i = 1; 1 < 4; i++) {
+    for (i = 1; 1 < 3; i++) {
       console.log(`answer.name-${i}`);
     }
 

@@ -1,0 +1,25 @@
+<!-- Creating an HTML checkbox -->
+
+<!-- To create a checkbox, you use the <input> element with the type of checkbox as follows: -->
+
+<input type="checkbox" id="accept" /> Accept
+<!-- Code language: HTML, XML (xml) -->
+
+<!-- It’s a good practice to always associate a checkbox with a label to improve usability and accessibility. By doing this, clicking the label also checks or unchecks the checkbox. -->
+
+<label for="accept">
+  <input type="checkbox" id="accept" name="accept" value="yes" /> Accept
+</label>
+<!-- Code language: HTML, XML (xml)
+
+Or: -->
+
+<input type="checkbox" id="accept" name="accept" value="yes" />
+<label for="accept"> Accept </label>
+<!-- Code language: HTML, XML (xml) -->
+
+<!-- Note that the for attribute’s value of the label must match the id of the checkbox.
+
+The following works but is bad practice so you should avoid it: -->
+
+<input type="checkbox" id="accept" name="accept" value="yes" /> Accept
