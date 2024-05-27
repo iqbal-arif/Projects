@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Removing Items from a Select Element Conditionally</title>
+  </head>
+  <body>
+    <label for="list">Alphabet</label>
+    <select id="list">
+      <option value="A">Item A</option>
+      <option value="B">Item B</option>
+      <option value="C">Item C</option>
+    </select>
+  </body>
+</html>
+
+<!-- 
+    Summary: in this tutorial, you’ll learn how to use JavaScript to remove items from a select element based on a condition.
+
+JavaScript uses the HTMLSelectElement class to represent the <select> element. To remove an option from a select element, you use the remove() method of the HTMLSelectElement object.
+
+Suppose the <select> element has three <option> elements with the corresponding index 0, 1, and 2:
+
+For example:
+Value	Text	Index
+A	Item A	0
+B	Item B	1
+C	Item C	2
+
+When you call the remove() method to remove one element, the index will change immediately.
+
+For example, if you remove the second element (B) with index 1, the index of the third element (C) will become 1:
+Value	Text	Index
+A	Item A	0
+C	Item C	1
+
+A common mistake is to iterate over the options of a <select> element and remove the element inside the loop without being aware that the indices have been adjusted.
+
+For example, the following attempts to remove items with the values B and C. However, it only removes the item B but not C.
+ -->
