@@ -63,6 +63,7 @@ Global Styles
 
 To add the global styles to an element, you create the style element, fill it with the CSS rules, and append the style element to the DOM tree, like this:
 */
+/*
 const style = document.createElement('style');
 style.innerHTML = `
       .note {
@@ -71,3 +72,4 @@ style.innerHTML = `
       }
     `;
 document.head.appendChild(style);
+*/
