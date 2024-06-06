@@ -29,34 +29,43 @@ FormData.entries()
 Code language: JavaScript (javascript)
 
 The entries() method returns an iterator of all key/value pairs in the FormData object.
+*/
 get() method
 
 FormData.get(name)
+/*
 Code language: JavaScript (javascript)
 
 The get() method returns the first value by a key name.
+*/
 getAll() method
 
 FormData.getAll(name)
+/*
 Code language: JavaScript (javascript)
 
 The getAll() method returns an array of all the values by a key name.
+*/
 has() method
 
 FormData.has(name);
+/*
 Code language: JavaScript (javascript)
 
 The has() method returns true if the FormData object contains a key name.
+*/
 keys() method
 
 FormData.keys()
+/*
 Code language: JavaScript (javascript)
 
 The keys() method returns an iterator of all the keys.
+*/
 set() method
-
+/*
 The set() method has two forms:
-
+*/
 FormData.set(name, value);
 FormData.set(name, value, filename);
 Code language: JavaScript (javascript)
