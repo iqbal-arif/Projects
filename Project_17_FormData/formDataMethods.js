@@ -68,12 +68,15 @@ The set() method has two forms:
 */
 FormData.set(name, value);
 FormData.set(name, value, filename);
+/*
 Code language: JavaScript (javascript)
 
 The set() method sets a new value for an existing key name or adds the key/value if it does not already exist.
+*/
 values() method
 
 FormData.values()
+/*
 Code language: JavaScript (javascript)
 
 The values() method returns an iterator of all the values in the FormData object.
