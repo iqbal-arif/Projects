@@ -62,7 +62,8 @@ Code language: JavaScript (javascript)
 
 The keys() method returns an iterator of all the keys.
 */
-set() method
+set() ;
+method
 /*
 The set() method has two forms:
 */
@@ -73,7 +74,7 @@ Code language: JavaScript (javascript)
 
 The set() method sets a new value for an existing key name or adds the key/value if it does not already exist.
 */
-values() method
+values(); method
 
 FormData.values()
 /*
