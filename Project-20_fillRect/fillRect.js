@@ -15,3 +15,24 @@ function drawRectangles() {
 }
 
 drawRectangles();
+
+/*
+Introduction to the JavaScript fillRect() method
+************************************************
+
+The fillRect() is a method of the 2d drawing context object. The fillRect() method allows you to draw a filled rectangle at (x,y) position with a specified with and height on a canvas.
+
+The following shows the syntax of the fillRect() method:
+
+ctx.fillRect(x,y,width,height);
+Code language: CSS (css)
+
+In this syntax:
+
+    x is the x-axis coordinate of the starting point of the rectangle.
+    y is the y-axis coordinate of the starting point of the rectangle.
+    width is the rectangles’ width. It can be positive or negative. The positive values are to the right while the negative values are to the left.
+    height is the rectangle’s height. It can be also positive or negative. The positive values are down while the negative values are up.
+
+The fillStyle attribute of the 2d drawing context will determine the fill style of the rectangle
+*/
