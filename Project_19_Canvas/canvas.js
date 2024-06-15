@@ -81,7 +81,7 @@ The fillStyle and strokeStyle properties of the 2D drawing context will determin
 You can set these properties to a string, a gradient object, or a pattern object. By default, they both set to a value of '#000000'.
 
 The following illustrates how to set the fill and stroke styles for the 2D drawing context and draw a rectangle.
-*/
+
 (() => {
   const canvas = document.querySelector('#main');
   if (!canvas.getContext) {
@@ -99,7 +99,7 @@ The following illustrates how to set the fill and stroke styles for the 2D drawi
   ctx.fillRect(50, 50, 150, 100);
   ctx.strokeRect(50, 50, 150, 100);
 })();
-/*
+
 Code language: JavaScript (javascript)
 
 Click here to see the canvas demo.
