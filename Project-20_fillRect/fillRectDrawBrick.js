@@ -41,7 +41,7 @@ const columns = Math.ceil(width / (bw + space));
 Code language: JavaScript (javascript)
 
 Third, draw bricks by using the fillRect() method. Use two for loops to draw bricks row by row.
-
+*/
 // draw rows
 for (let r = 0; r < rows; r++) {
     // draw columns
@@ -54,6 +54,7 @@ for (let r = 0; r < rows; r++) {
         }
     }
 }
+/*
 Code language: JavaScript (javascript)
 
 Note that the first brick of the even row will have a width that equals to a half of the normal brick’s width.
