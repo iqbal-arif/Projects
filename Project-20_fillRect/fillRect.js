@@ -23,8 +23,9 @@ Introduction to the JavaScript fillRect() method
 The fillRect() is a method of the 2d drawing context object. The fillRect() method allows you to draw a filled rectangle at (x,y) position with a specified with and height on a canvas.
 
 The following shows the syntax of the fillRect() method:
-
+*/
 ctx.fillRect(x,y,width,height);
+/*
 Code language: CSS (css)
 
 In this syntax:
