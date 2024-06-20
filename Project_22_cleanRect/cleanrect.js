@@ -1,3 +1,4 @@
+// Clear Canvas
 function draw() {
   const canvas = document.querySelector('#canvas');
 
