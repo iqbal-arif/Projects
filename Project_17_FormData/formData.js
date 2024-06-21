@@ -6,7 +6,7 @@ Summary: in this tutorial, you’ll learn about the JavaScript FormData API and 
 Introduction to the JavaScript FormData API
 
 Suppose you have a subscription form with two fields name and email.
-
+*/
 <form id="subscription">
     <h1>Subscribe</h1>
     <div id="message"></div>
@@ -24,6 +24,7 @@ Suppose you have a subscription form with two fields name and email.
         <button type="submit" class="full" id="submit">Subscribe</button>
     </div>
 </form>
+/*
 Code language: HTML, XML (xml)
 
 When you click the submit button, the web browser submits the values of the name and email fields in the form to the server.
