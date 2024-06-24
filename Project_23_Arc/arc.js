@@ -1,3 +1,4 @@
+// Canvas Arc JavaScript 
 const canvas = document.querySelector('#canvas');
 
 if (canvas.getContext) {
