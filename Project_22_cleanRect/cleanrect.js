@@ -12,6 +12,7 @@ function draw() {
   ctx.fillStyle = '#F9DC5C';
   ctx.fillRect(50, 50, 150, 150);
 
+// fill style 
   ctx.fillStyle = 'rgba(0,0,255,0.5)';
   ctx.fillRect(100, 100, 150, 150);
 
