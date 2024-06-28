@@ -35,6 +35,7 @@ function average(a, b) {
 }
 
 let x = average(10, 20);
+/*
 Code language: JavaScript (javascript)
 
 When the JavaScript engine executes this script, it places the global execution context (denoted by main() or global() function on the call stack.
@@ -43,6 +44,7 @@ JavaScript Call Stack - main
 The global execution context enters the creation phase and moves to the execution phase.
 
 The JavaScript engine executes the call to the average(10, 20) function and creates a function execution context for the average() function and pushes it on top of the call stack:
+
 JavaScript Call Stack - step 2
 
 The JavaScript engine starts executing the average() since because the average() function is on the top of the call stack.
@@ -68,12 +70,13 @@ The call stack has a fixed size, depending on the implementation of the host env
 If the number of execution contexts exceeds the size of the stack, a stack overflow error will occur.
 
 For example, when you execute a recursive function that has no exit condition, the JavaScript engine will issue a stack overflow error:
-
+*/
 function fn() {
     fn();
 }
 
 fn(); // stack overflow
+/*
 Code language: JavaScript (javascript)
 
 Asynchronous JavaScript
