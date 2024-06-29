@@ -96,3 +96,4 @@ Summary
 
     JavaScript engine uses a call stack to manage execution contexts.
     The call stack uses the stack data structure that works based on the LIFO (last-in-first-out) principle.
+*/
