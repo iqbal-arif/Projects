@@ -58,8 +58,9 @@ const result = await response.json();
 Code language: JavaScript (javascript)
 
 Third, show a success message if the HTTP status code is 200. Otherwise, display an error message. The message property of the result stores the success or error message.
-
+*/
 showMessage(result.message, response.status == 200 ? 'success' : 'error');
+/*
 Code language: JavaScript (javascript)
 
 Finally, define the showMessage() function that displays a success or error message:
