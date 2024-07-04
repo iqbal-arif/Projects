@@ -1,3 +1,4 @@
+/*
 Express Validation
 
 Summary: in this tutorial, you will learn how to use the express-validator library to validate and sanitize input data.
@@ -14,7 +15,7 @@ To make it more efficient, you can utilize third-party validation libraries. In 
 Validating query strings
 
 First, create a simple Express app:
-
+*/
 import express from 'express';
 
 const PORT = process.env.PORT || 3000;
@@ -23,6 +24,7 @@ const app = express();
 app.get('/hi', (req, res) => res.send(`Hi, ${req.params.name}!`));
 
 app.listen(PORT, () => console.log(`The server is listening on port ${PORT}`));
+/*
 Code language: JavaScript (javascript)
 
 The app includes a route /hi that accepts a query string name. It’ll show a greeting message on the web browser.
