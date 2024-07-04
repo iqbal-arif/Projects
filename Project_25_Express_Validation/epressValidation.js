@@ -70,7 +70,7 @@ To validate and sanitize the value of the name query string, you can use the exp
 Technically, the express-validator library is a set of middleware functions that validate and sanitize the input data.
 
 Fourth, validate the name query string using functions in the express-validator library:
-
+*/
 import express from 'express';
 import { query, validationResult, matchedData } from 'express-validator';
 
@@ -90,12 +90,13 @@ app.get('/hi', query('name').notEmpty().escape(), (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`The server is listening on port ${PORT}`));
+/*
 Code language: JavaScript (javascript)
 
 How it works.
 
 Step 1. Import functions from the express-validator library to handle validation
-
+*/
 import { query, validationResult, matchedData } from 'express-validator';
 Code language: JavaScript (javascript)
 
