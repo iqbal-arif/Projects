@@ -30,13 +30,15 @@ Code language: JavaScript (javascript)
 The app includes a route /hi that accepts a query string name. It’ll show a greeting message on the web browser.
 
 Second, install the express-validator library in the project by running the following npm command in your terminal:
-
+*/
 npm install express-validator
+/*
 Code language: JavaScript (javascript)
 
 Third, create a request to the following endpoint:
-
+*/
 http://localhost:3000/hi?name=John
+/*
 Code language: JavaScript (javascript)
 
 It’ll show the following message on the web browser
@@ -45,7 +47,7 @@ Hi, John!
 Code language: JavaScript (javascript)
 
 However, if you request the following endpoint without passing the name query string:
-
+*/
 http://localhost:3000/hi
 Code language: JavaScript (javascript)
 
