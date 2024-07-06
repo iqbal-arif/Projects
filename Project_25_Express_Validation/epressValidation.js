@@ -181,6 +181,7 @@ Validating request body
 Step 1. To process a request as a JSON object, you register the built-in middleware called express.json():
 
 app.use(express.json());
+/*
 Code language: JavaScript (javascript)
 
 This instructs the Express app to parse the body as a JSON object, allowing you to access it via the req.body property.
@@ -193,7 +194,7 @@ import {body, validationResult, matchedData} from 'express-validator';
 Code language: JavaScript (javascript)
 
 Step 3. Validate the title and completed fields in the body of the request:
-
+*/
 app.post('/api/todos',
   [body('title').notEmpty().isString(), body('completed').isBoolean()],
   (req, res) => {
@@ -206,12 +207,13 @@ app.post('/api/todos',
     res.send(record);
   }
 );
+/*
 Code language: JavaScript (javascript)
 
 In this example, we pass an array of middleware to the app.post() function. The first middleware validates the title field, and the second one validates the completed field in the request body.
 
 For example, if you make a POST request to the /api/todos endpoint without specifying the title and completed field in the request body, you’ll get the following error:
-
+*/
 {
   "errors": [
     {
