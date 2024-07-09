@@ -1,4 +1,4 @@
-/*
+3/*
 Express Validation
 
 Summary: in this tutorial, you will learn how to use the express-validator library to validate and sanitize input data.
@@ -151,7 +151,7 @@ To validate route parameters, you can use the param() function from the express-
 The param() function allows you to specify validation rules for router parameters.
 
 The following example shows how to use the param() function to validate the id route parameter:
-
+/*
 app.get(
   '/api/todos/:id',
   param('id').isInt({ min: 1 }).withMessage('ID must be a positive integer'),
@@ -166,6 +166,7 @@ app.get(
     res.send(`Fetching record with ID: ${id}`);
   }
 );
+*/
 Code language: JavaScript (javascript)
 
 How it works.
@@ -236,6 +237,7 @@ For example, if you make a POST request to the /api/todos endpoint without speci
     }
   ]
 }
+/*
 Code language: JavaScript (javascript)
 
 Summary
@@ -243,3 +245,4 @@ Summary
     Use the query() function to validate query strings.
     Use the param() function to validate route parameters.
     Use the body() function to validate the request body.
+*/
