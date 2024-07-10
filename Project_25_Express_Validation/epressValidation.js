@@ -49,6 +49,7 @@ Code language: JavaScript (javascript)
 However, if you request the following endpoint without passing the name query string:
 */
 http://localhost:3000/hi
+/*
 Code language: JavaScript (javascript)
 
 you’ll see the following message on the screen:
@@ -59,7 +60,7 @@ Code language: JavaScript (javascript)
 The reason is that the req.query.name is undefined in this example.
 
 In the worst case, if the query string contains JavaScript code, you might be redirected to a malicious page. For example:
-
+*/
 http://localhost:3000/hi?name=<script>window.location ='https://www.google.com';</script>
 Code language: JavaScript (javascript)
 
