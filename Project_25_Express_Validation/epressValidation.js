@@ -62,6 +62,7 @@ The reason is that the req.query.name is undefined in this example.
 In the worst case, if the query string contains JavaScript code, you might be redirected to a malicious page. For example:
 */
 http://localhost:3000/hi?name=<script>window.location ='https://www.google.com';</script>
+/*
 Code language: JavaScript (javascript)
 
 In this example, we inject the code that redirects to google.com. In the real scenario, you might be redirected to a malicious page. This is called cross-site scripting (XSS).
