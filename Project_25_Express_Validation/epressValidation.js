@@ -4,7 +4,7 @@ Express Validation
 Summary: in this tutorial, you will learn how to use the express-validator library to validate and sanitize input data.
 
 When your Express app receives data from external sources such as user inputs, it is crucial to validate and sanitize the input data.
-
+/*
     Data validation ensures that the input data meets certain criteria such as type, range, and format. It verifies that the input data is valid. For example, you can check if an email address has a valid format.
 
     Data sanitization cleans up the input data by removing or escaping harmful characters. It helps prevent malicious input such as code injection. For example, you can remove HTML or script tags from input data before rendering it on a webpage.
