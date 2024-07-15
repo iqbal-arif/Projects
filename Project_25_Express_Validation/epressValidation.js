@@ -192,8 +192,9 @@ This instructs the Express app to parse the body as a JSON object, allowing you 
 To access the fields of the JSON object, you can use the body() function from the express-validator library.
 
 Step 2. Import the body function from the express-validator library :
-
+*/
 import {body, validationResult, matchedData} from 'express-validator';
+/*
 Code language: JavaScript (javascript)
 
 Step 3. Validate the title and completed fields in the body of the request:
