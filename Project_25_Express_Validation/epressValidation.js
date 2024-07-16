@@ -123,11 +123,12 @@ In this syntax:
 The query(), notEmpty(), and escape() functions form a validation chain. Since they return a middleware function, we can use it in the app.get() method.
 
 Step 3. Get the validation result using the validationResult() function:
-
+/*
 const result = validationResult(req);
 if (!result.isEmpty()) {
    res.status(400).send({ errors: result.array() });
 }
+*/
 Code language: JavaScript (javascript)
 
 The query() function does not automatically report validation errors. Instead, it collects the validation errors, which are then verified using the validationResult() function. The validationResult() function returns a ValidationError object.
