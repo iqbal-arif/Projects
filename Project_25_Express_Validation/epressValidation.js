@@ -101,7 +101,7 @@ How it works.
 
 Step 1. Import functions from the express-validator library to handle validation
 */
-import { query, validationResult, matchedData } from 'express-validator';
+import { query, validationResult, matchedData } from 'express-validator'/*
 Code language: JavaScript (javascript)
 
 Here is the summary of the imported functions:
