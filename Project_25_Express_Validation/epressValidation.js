@@ -53,8 +53,9 @@ http://localhost:3000/hi
 Code language: JavaScript (javascript)
 
 you’ll see the following message on the screen:
-
+*************
 Hi, undefined
+*************
 Code language: JavaScript (javascript)
 
 The reason is that the req.query.name is undefined in this example.
@@ -111,8 +112,9 @@ Here is the summary of the imported functions:
     matchedData() function extracts the validated and sanitized data.
 
 Step 2. Validate the name query string:
-
+*/
 query('name').notEmpty().escape()
+/*
 Code language: JavaScript (javascript)
 
 In this syntax:
