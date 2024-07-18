@@ -1,3 +1,4 @@
+/*
 Express Validation
 
 Summary: in this tutorial, you will learn how to use the express-validator library to validate and sanitize input data.
@@ -16,25 +17,29 @@ Validating query strings
 First, create a simple Express app:
 
 import express from 'express';
-
+*/
 const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.get('/hi', (req, res) => res.send(`Hi, ${req.params.name}!`));
 
 app.listen(PORT, () => console.log(`The server is listening on port ${PORT}`));
+/*
 Code language: JavaScript (javascript)
 
 The app includes a route /hi that accepts a query string name. It’ll show a greeting message on the web browser.
 
 Second, install the express-validator library in the project by running the following npm command in your terminal:
 
+*/
 npm install express-validator
+/*
 Code language: JavaScript (javascript)
 
 Third, create a request to the following endpoint:
-
+*/
 http://localhost:3000/hi?name=John
+/*
 Code language: JavaScript (javascript)
 
 It’ll show the following message on the web browser
@@ -43,8 +48,9 @@ Hi, John!
 Code language: JavaScript (javascript)
 
 However, if you request the following endpoint without passing the name query string:
-
+*/
 http://localhost:3000/hi
+/*
 Code language: JavaScript (javascript)
 
 you’ll see the following message on the screen:
@@ -55,8 +61,9 @@ Code language: JavaScript (javascript)
 The reason is that the req.query.name is undefined in this example.
 
 In the worst case, if the query string contains JavaScript code, you might be redirected to a malicious page. For example:
-
+*/
 http://localhost:3000/hi?name=<script>window.location ='https://www.google.com';</script>
+/*
 Code language: JavaScript (javascript)
 
 In this example, we inject the code that redirects to google.com. In the real scenario, you might be redirected to a malicious page. This is called cross-site scripting (XSS).
