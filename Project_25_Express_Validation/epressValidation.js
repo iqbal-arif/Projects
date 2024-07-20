@@ -148,13 +148,15 @@ The isEmpty() method of the ValidationError object returns true if no validation
 Step 4. Get sanitized data
 
 To get the sanitized data, you use the matchedData() function:
-
+*/
 const cleanedData = matchedData(req);
+/*
 Code language: JavaScript (javascript)
 
 Step 5. Render the sanitized data
-
+*/
 res.send(`Hi, ${cleanedData.name}!`);
+/*
 Code language: JavaScript (javascript)
 
 Validating route parameters
