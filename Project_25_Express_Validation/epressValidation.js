@@ -166,7 +166,7 @@ To validate route parameters, you can use the param() function from the express-
 The param() function allows you to specify validation rules for router parameters.
 
 The following example shows how to use the param() function to validate the id route parameter:
-/*
+*/
 app.get(
   '/api/todos/:id',
   param('id').isInt({ min: 1 }).withMessage('ID must be a positive integer'),
@@ -181,7 +181,7 @@ app.get(
     res.send(`Fetching record with ID: ${id}`);
   }
 );
-*/
+/*
 Code language: JavaScript (javascript)
 
 How it works.
