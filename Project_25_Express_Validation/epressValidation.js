@@ -21,7 +21,7 @@ Validating query strings
 First, create a simple Express app:
 */
 import express from 'express';
-*/
+
 const PORT = process.env.PORT || 3000;
 const app = express();
 
@@ -86,10 +86,10 @@ Fourth, validate the name query string using functions in the express-validator 
 */
 import express from 'express';
 import { query, validationResult, matchedData } from 'express-validator';
-
+/*
 const PORT = process.env.PORT || 3000;
 const app = express();
-
+*/
 app.get('/hi', query('name').notEmpty().escape(), (req, res) => {
   // validate data
   const result = validationResult(req);
