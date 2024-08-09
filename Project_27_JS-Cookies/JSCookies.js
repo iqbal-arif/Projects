@@ -38,3 +38,17 @@ Code language: JavaScript (javascript)
 A cookie requires only name and value. For example:
 */
 document.cookie = 'username=admin';
+
+/*
+This example creates a cookie called username that has a value of admin. The web browser will send this cookie every time it makes a request to the server.
+
+Since the cookie doesn’t specify the expired time, it will be deleted when the web browser is closed.
+
+The cookie text "username=admin" doesn’t have any character that needs to be encoded.
+
+However, it’s a good practice to always use the encodeURIComponent() function when setting a cookie like this:
+*/
+
+document.cookie = `${encodeURIComponent('username')}=${encodeURIComponent(
+  'admin'
+)}`;
