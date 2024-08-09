@@ -52,3 +52,9 @@ However, it’s a good practice to always use the encodeURIComponent() function 
 document.cookie = `${encodeURIComponent('username')}=${encodeURIComponent(
   'admin'
 )}`;
+
+/*
+3) Remove a cookie
+
+To remove a cookie, you need to set the cookie again with the same name, path, domain, and secure option. And you need to set the expiration date to some time in the past.
+*/
