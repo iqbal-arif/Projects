@@ -98,3 +98,24 @@ class Cookie {
     Cookie.set(name, '', new Date(0), path, domain, secure);
   }
 }
+
+/*
+1) The get() method
+
+The get() method returns the value of a cookie with a specified name. To do so, it performs the following steps:
+
+    First, find the occurrence of the cookie name by an equal sign in the document.cookie property.
+    Second, if the cookie is available, it uses the indexOf() to find the end of the cookie, which is specified by the next semicolon (;) after that location. If the semicolon isn’t available, this means that the cookie is the last one in the string.
+    Third, decode the value of the cookie using the decodeURIComponent() function and return the decoded value.
+
+2) The set() method
+
+The set() method sets a cookie on the page. It accepts the arguments required to construct a cookie.
+
+The set() method requires the first two arguments: name and value. The other arguments aren’t mandatory.
+
+The set() method composes a cookie text and sets it to the document.cookie property.
+3) The remove() method
+
+To remove a cookie, the remove() method sets the cookie again with the expiration date set to January 1, 1970. Note that the new Date(0) returns a date object whose date is January 1, 1970.
+*/
