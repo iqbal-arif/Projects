@@ -118,4 +118,33 @@ The set() method composes a cookie text and sets it to the document.cookie prope
 3) The remove() method
 
 To remove a cookie, the remove() method sets the cookie again with the expiration date set to January 1, 1970. Note that the new Date(0) returns a date object whose date is January 1, 1970.
+
+Using the Cookie class
+
+The following shows how to use the Cookie class to set, get, and remove a cookie whose name is username and value is admin:
 */
+
+// set a cookie
+Cookie.set('username', 'admin');
+
+// get a cookie
+console.log(Cookie.get('username')); // admin
+
+// remove a cookie by a name
+Cookie.remove('username');
+
+/*
+View cookies with web browsers
+
+To view the cookies on the web browser, you use the devtools.
+
+    First, click the application tab.
+    Second, select Cookies node under the Storage.
+
+    Summary
+
+    A cookie is a piece of data that a server sends to a web browser. The web browser then stores it in the user’s computer and sends the cookie back to the same server in the subsequent requests.
+    The server uses cookies for identifying if two successive requests came from the same web browser.
+    To manage cookies, you use the document.cookie object. To make it more efficient, you can use the Cookie utility class.
+    Use the encodeURIComponent() and decodeURIComponent() function to encode and decode the cookie values.
+    */
