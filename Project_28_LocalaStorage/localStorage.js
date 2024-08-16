@@ -7,11 +7,11 @@ Introduction to the Storage type
 
 The Storage type is designed to store name-value pairs. The Storage type is an Object with the following additional methods:
 */
-    setItem(name, value) – set the value for a name
-    removeItem(name) – remove the name-value pair identified by name.
-    getItem(name) – get the value for a given name.
-    key(index) – get the name of the value in the given numeric position.
-    clear() – remove all values.
+setItem(name, value); // – set the value for a name
+removeItem(name); ////– remove the name-value pair identified by name.
+getItem(name); // – get the value for a given name.
+key(index); // – get the name of the value in the given numeric position.
+clear(); // – remove all values.
 /*
 To get the number of name-value pairs in a Storage object, you can use the length property.
 
@@ -37,15 +37,17 @@ However, cookies can be managed by both JavaScript in web browsers and servers.
 Accessing the localStorage
 
 You can access the localStorage via the property of the window object:
-
-window.localStorage
+*/
+window.localStorage;
+/*
 Code language: JavaScript (javascript)
 
 Since the localStorage is an instance of the Storage type, you can invoke the methods of the Storage type to manage data.
 
 When you type the following code in the Console:
-
-window.localStorage
+*/
+window.localStorage;
+/*
 Code language: JavaScript (javascript)
 
 … you’ll see the following object:
