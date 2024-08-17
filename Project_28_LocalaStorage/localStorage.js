@@ -34,6 +34,7 @@ Most modern web browsers allow you to store up to 5MB of data in the localStorag
 Second, the data stored in the localStorage can be managed by the client, specifically JavaScript in the web browser. It cannot be accessible by the servers.
 
 However, cookies can be managed by both JavaScript in web browsers and servers.
+
 Accessing the localStorage
 
 You can access the localStorage via the property of the window object:
@@ -53,3 +54,67 @@ Code language: JavaScript (javascript)
 … you’ll see the following object:
 
 Storage {length: 0}*/
+
+/*
+1) The setItem() method
+
+The following uses the setItem() method to store a name-value pair in the localStorage:
+*/
+window.localStorage.setItem('theme','dark');
+/*
+Code language: JavaScript (javascript)
+
+2) The length property
+
+To get the number of name-value pairs, you use the length property like this:
+*/
+console.log(window.localStorage.length); // 1
+/*
+Code language: JavaScript (javascript)
+
+Since the window object is global, you don’t need to explicitly specify it. For example:
+*/
+console.log(localStorage.length); // 1
+/*
+Code language: JavaScript (javascript)
+
+3) The getItem() method
+
+To get the value by a key, you use the getItem() method. The following example uses the getItem() method to get the value of theme key:
+*/
+localStorage.getItem('theme'); // 'dark'
+/*
+Code language: JavaScript (javascript)
+
+4) The removeItem() method
+
+To remove a name-value pair by a key, you use the removeItem() method. For example:
+*/
+localStorage.removeItem('theme');
+/*
+Code language: JavaScript (javascript)
+
+5) Loop over keys of the localStorage object
+
+The following stores three name-value pairs to the localStorage:
+*/
+localStorage.setItem('theme','light');
+localStorage.setItem('backgroundColor','white');
+localStorage.setItem('color','#111');
+/*
+Code language: JavaScript (javascript)
+
+To iterate over name-value pairs stored in the localStorage, you use the Object.keys() method with for...of loop:
+*/
+let keys = Object.keys(localStorage);
+for(let key of keys) {
+  console.log(`${key}: ${localStorage.getItem(key)}`);
+}
+/*
+Code language: JavaScript (javascript)
+
+Output:
+*/
+color: #111
+theme: light
+backgroundColor: white
