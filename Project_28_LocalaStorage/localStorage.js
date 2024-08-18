@@ -118,3 +118,31 @@ Output:
 color: #111
 theme: light
 backgroundColor: white
+
+/*
+Storing objects
+
+The Storage type stores only string data. To store objects, you need to convert them into strings using the JSON.stringify() method. For example:
+*/
+const settings = {
+    backgroundColor: '#fff',
+    color: '#111',
+    theme: 'light'
+};
+
+localStorage.setItem('settings', JSON.stringify(settings));
+
+console.log(localStorage.getItem('settings'));
+/*
+Code language: JavaScript (javascript)
+
+Output: (a string)
+*/
+'{"backgroundColor":"#fff","color":"#111","theme":"light"}'
+/*
+Code language: JavaScript (javascript)
+
+The following retrieves the value from the localStorage and converts it back to the object using the JSON.parse() method.
+*/
+let storedSettings = JSON.parse(localStorage.getItem('settings'));
+console.log(storedSettings);
