@@ -146,3 +146,26 @@ The following retrieves the value from the localStorage and converts it back to 
 */
 let storedSettings = JSON.parse(localStorage.getItem('settings'));
 console.log(storedSettings);
+/*
+The storage event
+
+When you make a change to the Storage object, the storage event is fired on the document.
+
+The storage event occurs in the following scenarios:
+
+    Store a name-value pair by calling the setItem() method.
+    Remove a name-value pair by calling the removeItem() method.
+    And remove all values by calling the clear() method.
+
+The storage event has the following properties:
+
+    domain – the domain which the storage changes for.
+    key – the key that was set or removed.
+    newValue – the value that the key was set to or null if the key was removed.
+    oldValue – the value before the key was set or removed.
+
+To listen for the storage event, you use the addEventListener() method of the window object like this:
+*/
+addEventListener('storage', function(e){
+   console.log(`The value of the ${e.key} changed for the ${e.domain}.`);
+});
