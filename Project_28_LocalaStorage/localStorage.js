@@ -60,7 +60,7 @@ Storage {length: 0}*/
 
 The following uses the setItem() method to store a name-value pair in the localStorage:
 */
-window.localStorage.setItem('theme','dark');
+window.localStorage.setItem('theme', 'dark');
 /*
 Code language: JavaScript (javascript)
 
@@ -98,23 +98,23 @@ Code language: JavaScript (javascript)
 
 The following stores three name-value pairs to the localStorage:
 */
-localStorage.setItem('theme','light');
-localStorage.setItem('backgroundColor','white');
-localStorage.setItem('color','#111');
+localStorage.setItem('theme', 'light');
+localStorage.setItem('backgroundColor', 'white');
+localStorage.setItem('color', '#111');
 /*
 Code language: JavaScript (javascript)
 
 To iterate over name-value pairs stored in the localStorage, you use the Object.keys() method with for...of loop:
 */
 let keys = Object.keys(localStorage);
-for(let key of keys) {
+for (let key of keys) {
   console.log(`${key}: ${localStorage.getItem(key)}`);
 }
 /*
 Code language: JavaScript (javascript)
 
 Output:
-*/
+
 color: #111
 theme: light
 backgroundColor: white
@@ -125,9 +125,9 @@ Storing objects
 The Storage type stores only string data. To store objects, you need to convert them into strings using the JSON.stringify() method. For example:
 */
 const settings = {
-    backgroundColor: '#fff',
-    color: '#111',
-    theme: 'light'
+  backgroundColor: '#fff',
+  color: '#111',
+  theme: 'light',
 };
 
 localStorage.setItem('settings', JSON.stringify(settings));
@@ -138,7 +138,7 @@ Code language: JavaScript (javascript)
 
 Output: (a string)
 */
-'{"backgroundColor":"#fff","color":"#111","theme":"light"}'
+('{"backgroundColor":"#fff","color":"#111","theme":"light"}');
 /*
 Code language: JavaScript (javascript)
 
@@ -166,6 +166,13 @@ The storage event has the following properties:
 
 To listen for the storage event, you use the addEventListener() method of the window object like this:
 */
-addEventListener('storage', function(e){
-   console.log(`The value of the ${e.key} changed for the ${e.domain}.`);
+addEventListener('storage', function (e) {
+  console.log(`The value of the ${e.key} changed for the ${e.domain}.`);
 });
+/*
+Summary
+
+    The Storage type provides you with the methods for storing and managing data in web browsers.
+    The localStorage is an instance of the Storage type that allows you to store persistent data in the web browsers.
+    The localStorage can store only strings. To store objects, you convert them to strings using the JSON.stringify() method. And you convert the strings into objects when you retrieve them from the localStorage using the JSON.parse() method.
+    */
