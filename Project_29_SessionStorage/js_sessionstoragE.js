@@ -38,3 +38,14 @@ Code language: JavaScript (javascript)
 Since the window is the global object, you can simply access the sessionStorage like this:
 */
 sessionStorage;
+/*
+2) Storing data in the sessionStorage
+
+The following stores a name-value pair in the sessionStorage:
+*/
+sessionStorage.setItem('mode', 'dark');
+/*
+Code language: JavaScript (javascript)
+
+If the sessionStorage has an item with the name of mode, the setItem() method will update the value for the existing item to dark. Otherwise, it’ll insert a new item.
+*/
