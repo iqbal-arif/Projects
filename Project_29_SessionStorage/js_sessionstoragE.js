@@ -49,3 +49,15 @@ Code language: JavaScript (javascript)
 
 If the sessionStorage has an item with the name of mode, the setItem() method will update the value for the existing item to dark. Otherwise, it’ll insert a new item.
 */
+/*
+3) Getting data from the sessionStorage
+
+To get the value of an item by name, you use the getItem() method. The following example gets the value of the item ‘mode‘:
+*/
+const mode = sessionStorage.getItem('mode');
+console.log(mode); // 'dark'
+/*
+Code language: JavaScript (javascript)
+
+If there is no item with the name mode, the getItem() method will return null.
+*/
