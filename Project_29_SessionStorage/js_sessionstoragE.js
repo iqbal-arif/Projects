@@ -61,3 +61,9 @@ Code language: JavaScript (javascript)
 
 If there is no item with the name mode, the getItem() method will return null.
 */
+/*
+4) Removing an item by a name
+
+To remove an item by the name, you use the removeItem() method. The following removes the item with the name of 'mode':
+*/
+sessionStorage.removeItem('mode');
