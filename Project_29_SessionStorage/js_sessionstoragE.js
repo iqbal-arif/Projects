@@ -67,3 +67,18 @@ If there is no item with the name mode, the getItem() method will return null.
 To remove an item by the name, you use the removeItem() method. The following removes the item with the name of 'mode':
 */
 sessionStorage.removeItem('mode');
+
+/*
+5) Iterating over all items
+
+To iterate over all items stored in the sessionStorage, you follow these steps:
+
+    Use Object.keys() to get all keys of the sessionStorage object.
+    Use for...of to iterate over the keys and get the items by keys.
+
+The following code illustrates the steps:
+*/
+let keys = Object.keys(sessionStorage);
+for (let key of keys) {
+  console.log(`${key}: ${sessionStorage.getItem(key)}`);
+}
