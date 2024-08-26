@@ -82,3 +82,11 @@ let keys = Object.keys(sessionStorage);
 for (let key of keys) {
   console.log(`${key}: ${sessionStorage.getItem(key)}`);
 }
+/*
+6) Deleting all items in the sessionStorage
+
+The data stored in the sessionStorage are automatically deleted when the web browser tab/window is closed.
+
+In addition, you can use the clear() method to programmatically delete all data stored in the sessionStorage.
+*/
+sessionStorage.clear();
