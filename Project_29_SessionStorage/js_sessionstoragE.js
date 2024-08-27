@@ -98,3 +98,18 @@ The sessionStorage has many practical applications. And the following are the no
     The sessionStorage can be used to store the state of the user interface of the web application. Later, when the user comes back to the page, you can restore the user interface stored in the sessionStorage.
     The sessionStorage can also be used to pass data between pages instead of using the hidden input fields or URL parameters.
     */
+/*
+JavaScript sessionStorage application
+
+You’ll build a simple web application that allows users to select the mode, either dark or light mode. By default, it has a light mode. And you’ll use the sessionStorage to remember the mode when the page refreshes.
+
+If you refresh the page, the mode that you selected will restore since it’s stored in the sessionStorage.
+
+However, if you close the tab or window, the page will reset to the dark mode, which is the default mode.
+
+1) Creating the project folder structure
+
+First, create a new folder called session-storage. In the session-storage folder, create two subfolders: js and css that will store the JavaScript and CSS files.
+
+Second, create a new index.html in the sessionStorage folder, the app.js file in the js folder, and style.css file in the css folder.
+*/
