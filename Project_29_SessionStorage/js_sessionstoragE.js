@@ -90,3 +90,11 @@ The data stored in the sessionStorage are automatically deleted when the web bro
 In addition, you can use the clear() method to programmatically delete all data stored in the sessionStorage.
 */
 sessionStorage.clear();
+/*
+Why JavaScript sessionStorage
+
+The sessionStorage has many practical applications. And the following are the notable ones:j
+
+    The sessionStorage can be used to store the state of the user interface of the web application. Later, when the user comes back to the page, you can restore the user interface stored in the sessionStorage.
+    The sessionStorage can also be used to pass data between pages instead of using the hidden input fields or URL parameters.
+    */
