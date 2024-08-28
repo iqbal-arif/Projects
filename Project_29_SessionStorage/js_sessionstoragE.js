@@ -113,3 +113,185 @@ First, create a new folder called session-storage. In the session-storage folder
 
 Second, create a new index.html in the sessionStorage folder, the app.js file in the js folder, and style.css file in the css folder.
 */
+/*
+2) Building the HTML page
+
+The following shows the index.html page:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript sessionStorage Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript sessionStorage Demo</h1>
+        <p>Click the button to switch to the dark/light mode.</p>
+        <p>Refresh the page to check if the mode is saved.</p>
+        <a id="theme-switcher" class="btn"></a>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
+
+In this index.html file, we place the style.css in the head section and app.js in the body section.
+
+The page has some elements. The most important one is the button with the id theme-switcher.
+*/
+
+/*
+3) Creating app.js file
+
+First, declare two constants that will be used as the butotn’s label:
+*/
+const MOON = '🌙';
+const SUN = '☀️';
+/*
+Code language: JavaScript (javascript)
+
+You’ll use the SUN as the label of the theme-switcher button in the dark mode and MOON in the light mode.
+
+Second, declare three constants for the dark, light, and default modes:
+*/
+const DARK_MODE = 'dark';
+const LIGHT_MODE = 'light';
+const DEFAULT_MODE = DARK_MODE;
+/*
+Code language: JavaScript (javascript)
+
+Third, select the button theme-switcher by using the querySelector():
+*/
+const btn = document.querySelector('#theme-switcher');
+/*
+Code language: JavaScript (javascript)
+
+Fourth, define a new function setMode() to change the mode:
+*/
+
+function setMode(mode = DEFAULT_MODE) {
+    if (mode === DARK_MODE) {
+        btn.textContent = SUN;
+        document.body.classList.add(DARK_MODE);
+
+    } else if (mode === LIGHT_MODE) {
+        btn.textContent = MOON;
+        document.body.classList.remove(DARK_MODE);
+    }
+}
+/*
+Code language: JavaScript (javascript)
+
+In the dark mode, the setMode() changes the button to SUN and adds the DARK_MODE class to the body element
+
+And in the light mode, the setMode() changes the button label to MOON and removes the DARK_MODE class from the body element.
+
+The following shows the CSS of the light mode. The background color is white and the text color is black:
+*/
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.7;
+    transition: 0.2s ease-in-out;
+    padding: 20px;
+}
+/*
+Code language: CSS (css)
+
+In the dark mode, the background color is black and the text color is white:
+*/
+.dark {
+    background-color: black;
+    color: #fff;
+}
+/*
+Code language: CSS (css)
+
+To switch from the light to dark mode, you add the .dark class to the body element and vice versa.
+
+Fifth, define the init() function that will run when the page loads:
+*/
+function init() {
+    let storedMode = sessionStorage.getItem('mode');
+    if (!storedMode) {
+        storedMode = DEFAULT_MODE;
+        sessionStorage.setItem('mode', DEFAULT_MODE);
+    }
+    setMode(storedMode);
+}
+/*
+Code language: JavaScript (javascript)
+
+In this function, we use the getItem() method to retrieve the mode stored in the sessionStorage.
+
+If the sessionStorage doesn’t have the mode item, the init() function will switch the page to the default mode, which is the dark mode. Otherwise, it sets to the mode stored in the sessionStorage.
+
+Sixth, attach a click event handler to the theme-switcher button:
+*/
+btn.addEventListener('click', function () {
+    let mode = sessionStorage.getItem('mode');
+    if (mode) {
+        let newMode = mode == DARK_MODE ? LIGHT_MODE : DARK_MODE;
+        setMode(newMode);
+        sessionStorage.setItem('mode', newMode);
+    }
+});
+
+/*
+Code language: JavaScript (javascript)
+
+The click event handler gets the mode stored in the sessionStorage.
+
+If the mode item exists, it toggles the mode. In other words, the light mode becomes the dark mode and vice versa.
+
+It then uses the setItem() method to update the mode item in the sessionStorage to the new one.
+
+The following shows a complete app.js file:
+
+/*********************************** */
+/*******LIght and Dark mood******** */
+/*********************************** */
+const MOON = '🌙';
+const SUN = '☀️';
+const DARK_MODE = 'dark';
+const LIGHT_MODE = 'light';
+const DEFAULT_MODE = DARK_MODE;
+
+const btn = document.querySelector('#theme-switcher');
+
+init();
+
+function init() {
+    let storedMode = sessionStorage.getItem('mode');
+    if (!storedMode) {
+        storedMode = DEFAULT_MODE;
+        sessionStorage.setItem('mode', DEFAULT_MODE);
+    }
+    setMode(storedMode);
+}
+
+function setMode(mode = DEFAULT_MODE) {
+    if (mode === DARK_MODE) {
+        btn.textContent = SUN;
+        document.body.classList.add(DARK_MODE);
+
+    } else if (mode === LIGHT_MODE) {
+        btn.textContent = MOON;
+        document.body.classList.remove(DARK_MODE);
+    }
+}
+
+btn.addEventListener('click', function () {
+    let mode = sessionStorage.getItem('mode');
+    if (mode) {
+        let newMode = mode == DARK_MODE ? LIGHT_MODE : DARK_MODE;
+        setMode(newMode);
+        sessionStorage.setItem('mode', newMode);
+    }
+});
