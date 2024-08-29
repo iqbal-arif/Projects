@@ -295,3 +295,15 @@ btn.addEventListener('click', function () {
         sessionStorage.setItem('mode', newMode);
     }
 });
+
+/*
+First, you select a mode e.g., light mode, the sessionStorage will save it.
+
+Then, you refresh the page. It’ll show the previously selected mode.
+
+To view the data stored in the session storage in the web browser, you click the Application tab and select the Session Storage:
+Summary
+
+    The sessionStorage allows you to store the data for session only. The browser will delete the sessionStorage data when you close the browser tab or window.
+    The sessionStorage is an instance of the Storage type, therefore, you can use the methods of the Storage type to manage data in the sessionStorage.
+    */
