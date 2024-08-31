@@ -72,3 +72,62 @@ The https://www.javascripttutorial.net/dom/ and https://www.javascripttutorial.n
 
 However, the http://www.javascripttutorial.net/ and https://www.javascripttutorial.net/ aren’t the same origin since they have different protocols and ports:
 */
+/*
+https://www.javascripttutorial.net	Protocol https Port	443
+http://www.javascripttutorial.net   Protocol http Port	80
+		
+
+IndexedDB adheres to the same-origin policy. It means that each origin has its own set of databases. And one origin cannot access databases from other origins.
+Basic IndexedDB operations
+
+The following describes the basic operations on the IndexedDB databases such as
+
+    Opening a connection to a database.
+    Inserting an object into the object store.
+    Reading data from the object store.
+    Using a cursor to iterate over a result set.
+    Deleting an object from the object store.
+
+Before opening a connection to a database in the IndexedDB, let’s create the project structure first.
+1) Create the project structure
+
+First, create a new folder called indexeddb folder. Inside the indexeddb folder, create another subfolder called js.
+
+Second, create the index.html in the indexeddb folder, app.js in the js folder.
+
+Third, place the <script> tag that links to the app.js file in the index.html file like this:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndexedDB</title>
+</head>
+<body>
+    <script src="js/app.js"></script>
+</body>
+</html>
+In app.js, you’ll place all the JavaScript code in an IIFE.
+*/
+
+(function () {
+  // all the code will be here
+  // ...
+})();
+/*
+Code language: JavaScript (javascript)
+
+1) Check if the IndexedDB is supported
+
+The following code checks if a web browser supports the IndexedDB:
+*/
+if (!window.indexedDB) {
+  console.log(`Your browser doesn't support IndexedDB`);
+  return;
+}
+/*
+Code language: JavaScript (javascript)
+
+Since most modern web browsers support the IndexedDB, this may not be necessary anymore.
+*/
