@@ -131,3 +131,34 @@ Code language: JavaScript (javascript)
 
 Since most modern web browsers support the IndexedDB, this may not be necessary anymore.
 */
+
+/*
+2) Open a database
+
+To open a connection to a database, you use the open() method of the window.indexedDB:
+*/
+const request = indexedDB.open('CRM', 1);
+/*
+Code language: JavaScript (javascript)
+
+The open() method accepts two arguments:
+
+    The database name (CRM)
+    The database version (1)
+
+The open() method returns a request object which is an instance of the IDBOpenDBRequest interface.
+
+When you call the open() method, it can succeed or fail. To handle each case, you can assign the corresponding event handler as follows:
+*/
+request.onerror = (event) => {
+  console.error(`Database error: ${event.target.errorCode}`);
+};
+
+request.onsuccess = (event) => {
+  // add implementation here
+};
+
+/*
+
+
+*/
