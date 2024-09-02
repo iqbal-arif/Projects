@@ -159,6 +159,38 @@ request.onsuccess = (event) => {
 };
 
 /*
+3) Create object stores
 
+When you open the database for the first time, the onupgradeneeded event will trigger.
+
+If you open the database for the second time with a version higher than the existing version, the onupgradeneeded  event also triggers.
+
+For the first time, you can use the onupgradeneeded event handler to initialize the object stores and indexes.
+
+For example, the following onupgradeneeded event handler creates the Contacts object store and its index.
+*/
+// create the Contacts object store and indexes
+request.onupgradeneeded = (event) => {
+  let db = event.target.result;
+
+  // create the Contacts object store
+  // with auto-increment id
+  let store = db.createObjectStore('Contacts', {
+    autoIncrement: true,
+  });
+
+  // create an index on the email property
+  let index = store.createIndex('email', 'email', {
+    unique: true,
+  });
+};
+/*
+Code language: JavaScript (javascript)
+
+How it works.
+
+    First, get the IDBDatabase instance from the event.target.result and assign it to the db variable.
+    Second, call the createObjectStore() method to create the Contacts object store with the autoincrement key. It means that the IndexedDB will generate an auto-increment number starting at one as the key for every new object inserted into the Contacts object store.
+    Third, call the createIndex() method to create an index on the email property. Since the email is unique, the index should also be unique. To do so, you specify the third argument of the createIndex() method { unique: true }.
 
 */
