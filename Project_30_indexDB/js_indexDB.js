@@ -194,3 +194,79 @@ How it works.
     Third, call the createIndex() method to create an index on the email property. Since the email is unique, the index should also be unique. To do so, you specify the third argument of the createIndex() method { unique: true }.
 
 */
+/*
+4) Insert data into object stores
+
+Once you open a connection to the database successfully, you can manage data in the onsuccess event handler.
+
+For example, to add an object to an object store, you follow these steps:
+First, open a new transaction.
+Second, get an object store.
+Third, call the put() method of the object store to insert a new record.
+Finally, close the connection to the database once the transaction completes.
+
+The following insertContact() function inserts a new contact into the Contacts object store:
+
+*/
+function insertContact(db, contact) {
+  // create a new transaction
+  const txn = db.transaction('Contacts', 'readwrite');
+
+  // get the Contacts object store
+  const store = txn.objectStore('Contacts');
+  //
+  let query = store.put(contact);
+
+  // handle success case
+  query.onsuccess = function (event) {
+    console.log(event);
+  };
+
+  // handle the error case
+  query.onerror = function (event) {
+    console.log(event.target.errorCode);
+  };
+
+  // close the database once the
+  // transaction completes
+  txn.oncomplete = function () {
+    db.close();
+  };
+}
+/*
+Code language: JavaScript (javascript)
+
+To create a new transaction, you call the transaction() method of the IDBDatabase object.
+
+You can open a transaction in one of two modes: readwrite or readonly. The readwrite mode allows you to read data from and write data to the database while the readonly mode allows you to only read data from the database.
+
+It’s a good practice to open a readonly transaction if you need to read data from a database only.
+
+After defining the insertContact() function, you can call it in the onsuccess event handler of the request to insert one or more contacts like this:
+*/
+request.onsuccess = (event) => {
+  const db = event.target.result;
+
+  insertContact(db, {
+    email: 'john.doe@outlook.com',
+    firstName: 'John',
+    lastName: 'Doe',
+  });
+
+  insertContact(db, {
+    email: 'jane.doe@gmail.com',
+    firstName: 'Jane',
+    lastName: 'Doe',
+  });
+};
+/*
+Code language: JavaScript (javascript)
+
+Now, if you open the index.html file in the web browser, the code in the app.js will execute to:
+
+    Create the CRM database in the IndexedDB.
+    Create the Contacts object store in the CRM database.
+    Insert two records into the object store.
+
+If you open the devtools on the web browser, you’ll see the CRM database with the Contacts object store. And in the Contacts object store, you’ll see the data there as shown in the following picture:
+*/
