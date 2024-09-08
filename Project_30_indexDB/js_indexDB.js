@@ -376,3 +376,55 @@ Code language: JavaScript (javascript)
 
 Output:
 */
+/*
+7) Read all data from an object store
+
+The following shows how to use a cursor to read all the objects from the Contacts object store:
+*/
+function getAllContacts(db) {
+  const txn = db.transaction('Contacts', 'readonly');
+  const objectStore = txn.objectStore('Contacts');
+
+  objectStore.openCursor().onsuccess = (event) => {
+    let cursor = event.target.result;
+    if (cursor) {
+      let contact = cursor.value;
+      console.log(contact);
+      // continue next record
+      cursor.continue();
+    }
+  };
+  // close the database connection
+  txn.oncomplete = function () {
+    db.close();
+  };
+}
+/*
+Code language: JavaScript (javascript)
+
+The objectStore.openCursor() returns a cursor used to iterate over an object store.
+
+To iterate over the objects in an object store using the cursor, you need to assign an onsuccess handler:
+*/
+objectStore.openCursor().onsuccess = (event) => {
+  //...
+};
+/*
+Code language: JavaScript (javascript)
+
+The event.target.result returns the cursor. To get the data, you use the cursor.value property.
+
+The cursor.continue() method advances the cursor to the position of the next record in the object store.
+
+The following calls the getAllContacts() in the onsuccess event handler to show all data from the Contacts object store:
+*/
+request.onsuccess = (event) => {
+  const db = event.target.result;
+  // get all contacts
+  getAllContacts(db);
+};
+/*
+Code language: JavaScript (javascript)
+
+Output:
+*/
