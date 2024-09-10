@@ -428,3 +428,49 @@ Code language: JavaScript (javascript)
 
 Output:
 */
+/*
+8) Delete a contact
+
+To delete a record from the object store, you use the delete() method of the object store.
+
+The following function deletes a contact by its id from the Contacts object store:
+*/
+function deleteContact(db, id) {
+  // create a new transaction
+  const txn = db.transaction('Contacts', 'readwrite');
+
+  // get the Contacts object store
+  const store = txn.objectStore('Contacts');
+  //
+  let query = store.delete(id);
+
+  // handle the success case
+  query.onsuccess = function (event) {
+    console.log(event);
+  };
+
+  // handle the error case
+  query.onerror = function (event) {
+    console.log(event.target.errorCode);
+  };
+
+  // close the database once the
+  // transaction completes
+  txn.oncomplete = function () {
+    db.close();
+  };
+}
+/*
+Code language: JavaScript (javascript)
+
+And you can call the deleteContact() function in the onsuccess event handler to delete the contact with id 1 as follows:
+*/
+request.onsuccess = (event) => {
+  const db = event.target.result;
+  deleteContact(db, 1);
+};
+/*
+Code language: JavaScript (javascript)
+
+If you run the code, you’ll find that the contact with id 1 will be deleted.
+*/
