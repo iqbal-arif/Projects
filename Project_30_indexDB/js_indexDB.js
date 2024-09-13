@@ -475,7 +475,9 @@ Code language: JavaScript (javascript)
 If you run the code, you’ll find that the contact with id 1 will be deleted.
 */
 /*
+Put it all together
 
+The following shows the complete app.js file:
 */
 (function () {
   // check for IndexedDB support
@@ -656,5 +658,10 @@ If you run the code, you’ll find that the contact with id 1 will be deleted.
   }
 })();
 /*
+Summary
 
+    The IndexedDB is a large-scale object stored in web browsers.
+    The IndexedDB stores data as key-value pairs. The values can be any data including simple and complex ones.
+    The IndexedDB consists of one or more databases. Each database has one or more object stores. Typically, you create a database in the IndexedDB per web application.
+    The IndexedDB is useful for web applications that don’t require a persistent internet connection, especially for applications that work both online and offline.
 */
